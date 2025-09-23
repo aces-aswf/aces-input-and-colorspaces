@@ -1,3 +1,6 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- Copyright Contributors to the ACES Project. -->
+
 # Security Policy
 
 ## Reporting a Vulnerability
