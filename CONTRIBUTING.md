@@ -11,7 +11,8 @@ from the Linux Foundation.
 
 ### License
 
-ACES is licensed under the [Apache 2.0](./LICENSE) license. New contributions should abide by that license. 
+ACES is licensed under the [Apache 2.0](./LICENSE) license. New contributions
+should abide by that license. 
 
 ### Contributor License Agreements
 
@@ -24,11 +25,13 @@ before a commit can be merged.
 
 * If you are an individual writing the code on your own time and you're SURE you
   are the sole owner of any intellectual property you contribute, you can [sign
-  the CLA as an individual contributor](https://docs.linuxfoundation.org/lfx/easycla/contributors/individual-contributor).
+  the CLA as an individual
+  contributor](https://docs.linuxfoundation.org/lfx/easycla/contributors/individual-contributor).
 
 * If you are writing the code as part of your job, or if there is any
   possibility that your employers might think they own any intellectual property
-  you create, then you should use the [Corporate Contributor Licence Agreement](https://docs.linuxfoundation.org/lfx/easycla/contributors/corporate-contributor).
+  you create, then you should use the [Corporate Contributor Licence
+  Agreement](https://docs.linuxfoundation.org/lfx/easycla/contributors/corporate-contributor).
 
 The ACES CLA's are the standard forms used by Linux Foundation projects and
 [recommended by the ASWF
