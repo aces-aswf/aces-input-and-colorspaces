@@ -1,90 +1,55 @@
 <!-- SPDX-License-Identifier: Apache-2.0 -->
-<!-- Copyright Contributors to the ACES Project -->
+<!-- Copyright Contributors to the ACES Project. -->
 
 # ACES Input and Color Space Conversion Transforms
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![CLA
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![CLA
 assistant](https://cla-assistant.io/readme/badge/ampas/aces-input-and-colorspaces)](https://cla-assistant.io/ampas/aces-input-and-colorspaces)
 
+This repository provides Color Space Conversion Transforms for use with ACES.
+Some transforms may require code from the
+[`aces-core`](https://github.com/ampas/aces-dev) repository. 
 
-This is a submodule of the [ACES repository](https://github.com/ampas/aces-dev)
-and contains Input Transforms and Color Space Conversion Transforms for use
-within ACES-based workflows. Color Space Conversion Trasnforms (CSCs) define
-conversions between ACES2065-1 and color encodings such as "camera-log" spaces.
-When going from camera-log to ACES2065-1, these transforms usually consist of a
-log-to-lin function followed by a 3x3 matrix. When going from ACES2065-1 to
-camera-log, CSCs usually consist of a 3x3 matrix followed by a lin-to-log
-function. CSCs do not change the image state from scene-referred, they re-encode
-the scene-referred data to linear ACES.
+In earlier versions of ACES, Input Transforms used the `IDT` token in filenames
+and TransformIDs. In ACES 2, the `CSC` token is used, indicating that a
+transform may function either as an Input Transforms or as a general CSC.
 
-
-## Usage
-The transforms in this repository import CTL library files to leverage basic
-utility functions and reuse a RGB to RGB matrix calculation function. These
-imports are a part of the [`aces-core`](https://github.com/ampas/aces-core)
-repository. However, color primary chromaticities and lin/log conversion
-functions are included locally in each transform rather than importing those
-from a color spaces libary file. This was a deliberate choice to allow for quick
-reference of the numbers and lin/log functions in line without needing to
-cross-reference to a separate library file.
-
-
-## Note to ACES Implementers
-
-This repository is structured to support accurate implementation of ACES Input
-and Color Space Conversion Transforms. Understanding the layout and intended use
-of these transforms is crucial for effective integration into your systems.
-
-### Implementation Guidelines
-- **Primary Transforms**: All transforms located in each of the subdirectories
-  of the root directory, with the exception of the `contrib` directory, are
-  essential and should be implemented in all ACES systems. These subdirectories
-  contain the standardized, validated transforms necessary for maintaining
-  compatibility and functionality across different platforms and devices.
-- **Community Contributed Transforms**: The `contrib` directory contains
-  additional, community-supplied transforms. These are considered optional and
-  should be included at your discretion. They may provide useful extensions but
-  vary in their level of testing and support. It is advisable to evaluate their
-  reliability and suitability for your specific needs before choosing to
-  integrate them.
-- **Updates and Maintenance**: Ensure your system includes the most recent
-  updates by regularly incorporating new and revised transforms from the main
-  subdirectories, keeping in line with the latest ACES specifications and
-  industry practices.
-
-Following these guidelines ensures that ACES implementers can build robust,
-consistent systems capable of high-fidelity color management, while also
-recognizing the flexibility offered by community contributions.
-
-
-### For camera manufacturers
-
-If you would like CSCs for your cameras to be included in this repository, or
-would like to update your transforms currently in the repository, please open a
-pull request. 
-
-
-## License
-
-ACES is licensed under the terms of the [LICENSE](./LICENSE.md) agreement.
-
+## Input Transforms
+Input Transforms, i.e. CSCs converting _to_ ACES2065-1, included here are
+supplied manufacturers or derived from manufacturer-published documentation.
+They are provided for convenience only and may not represent the latest
+recommendations from the manufacturer. While efforts are made to maintain
+accuracy, users should confirm with the manufacturer that they are using the
+most current IDTs for their camera.
 
 ## Contributing
 
-Anyone can contribute to ACES, Please see [CONTRIBUTING.md](./CONTRIBUTING.md)
-for details and instructions.
+ACES depends on community participation. Developers, manufacturers, and end
+users are encouraged to contribute code, bug fixes, documentation, and other
+technical artifacts.
 
+All contributors must have a signed Contributor License Agreement (CLA) on file
+to ensure that the project can freely use your contributions. 
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 
 ## Governance
 
-ACES is goverened by the Academy Software Foundation ASWF. See
-[GOVERNANCE.md](GOVERNANCE.md) for detailed information about how the project
-operates.
-
+This repository is a submodule of the ACES project, hosted by the ASWF. Details
+about how the project operates can be found in the
+[GOVERNANCE.md](https://github.com/ampas/aces/blob/main/GOVERNANCE.md) file in
+the top-level ACES repository.
 
 ## Reporting Issues
 
-To report a problem, please open an
-[issue](https://github.com/ampas/aces-input-and-colorspaces/issues)
+To report a problem with Output Transfoms, please open an
+[issue](https://github.com/ampas/aces-input-and-colorspaces/issues).
 
-For support, please visit [ACESCentral.com](https://acescentral.com)
+If the issue is senstive in nature or a security related issue, please do not
+report in the issue tracker. Instead refer to [SECURITY.md](SECURITY.md) for
+more information about the project security policy.
+
+## License
+
+The ACES Project is licensed under the [Apache 2.0 license](./LICENSE).
