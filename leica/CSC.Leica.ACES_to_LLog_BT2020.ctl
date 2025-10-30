@@ -2,7 +2,7 @@
 // Copyright Contributors to the ACES Project.
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:CSC.Leica.ACES_to_LLog_BT2020.a2.v1</ACEStransformID>
-// <ACESuserName>ACES2065-1 to L-Log Rec.2020</ACESuserName>
+// <ACESuserName>ACES2065-1 to Leica L-Log Rec.2020</ACESuserName>
 
 import "Lib.Academy.Utilities";
 import "Lib.Academy.ColorSpaces";
