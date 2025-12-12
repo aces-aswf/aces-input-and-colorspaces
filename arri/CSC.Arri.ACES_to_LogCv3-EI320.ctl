@@ -9,26 +9,7 @@
 //
 
 import "Lib.Academy.Utilities";
-import "Lib.Academy.ColorSpaces";
 import "Lib.Arri.LogC3";
-
-const Chromaticities AP0 = // ACES Primaries from SMPTE ST2065-1
-    {
-        {0.73470, 0.26530},
-        {0.00000, 1.00000},
-        {0.00010, -0.07700},
-        {0.32168, 0.33767}};
-
-const Chromaticities ARRI_ALEXA_WG_PRI =
-    {
-        {0.68400, 0.31300},
-        {0.22100, 0.84800},
-        {0.08610, -0.10200},
-        {0.31270, 0.32900}};
-
-const float AP0_to_AWG3_MAT[3][3] = calculate_rgb_to_rgb_matrix(AP0,
-                                                                ARRI_ALEXA_WG_PRI,
-                                                                CONE_RESP_MAT_CAT02);
 
 const float EI = 320.0;
 
