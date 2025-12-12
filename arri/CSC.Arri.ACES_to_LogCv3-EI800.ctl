@@ -39,8 +39,7 @@ void main(input varying float rIn,
           output varying float rOut,
           output varying float gOut,
           output varying float bOut,
-          output varying float aOut,
-          input uniform float EI = 800.0)
+          output varying float aOut)
 {
     float ACES[3] = {rIn, gIn, bIn};
 
