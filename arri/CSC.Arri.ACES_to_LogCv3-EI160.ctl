@@ -1,20 +1,17 @@
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:CSC.Arri.ACES_to_LogC3.a2.v1</ACEStransformID>
-// <ACESuserName>ACES2065-1 to ARRI LogC3</ACESuserName>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:CSC.Arri.ACES_to_LogC3-EI160.a2.v1</ACEStransformID>
+// <ACESuserName>ACES2065-1 to ARRI LogC3 EI160</ACESuserName>
 
 //
-// ACES Color Space Conversion - ACES2065-1 to Arri LogC3
+// ACES Color Space Conversion - ACES2065-1 to Arri LogC3 EI160
 //
 // converts ACES2065-1 (AP0 w/ linear encoding) to
-//          Arri LogC3
-//
-//  NOTE: Like its LogC3-to-ACES counterpart, this ACES-to-LogC3 transform
-//  declares EI as a parameter, but defaults to 800. Due to the Hermite spline
-//  blending region between 0.8 and 1.0, the function currently will only work
-//  for EI values below 1600.
+//          Arri LogC3 EI160
 //
 
 import "Lib.Academy.Utilities";
 import "Lib.Arri.LogC3";
+
+const float EI = 160.0;
 
 void main(input varying float rIn,
           input varying float gIn,
@@ -23,8 +20,7 @@ void main(input varying float rIn,
           output varying float rOut,
           output varying float gOut,
           output varying float bOut,
-          output varying float aOut,
-          input uniform float EI = 800.0)
+          output varying float aOut)
 {
     float ACES[3] = {rIn, gIn, bIn};
 
