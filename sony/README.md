@@ -4,7 +4,7 @@ The following unified IDTs are recommended for use with all Sony cameras that su
 - `CSC.Sony.SLog3_SGamut3_to_ACES.ctl` (S-Gamut3)
 - `CSC.Sony.SLog3_SGamut3Cine_to_ACES.ctl` (S-Gamut3.Cine)
 
-These unified IDTs are derived from theoretical values and are the recommended trasnforms for all current S-Log3 workflows.
+These unified IDTs are derived from theoretical values and are the recommended transforms for all current S-Log3 workflows.
 
 --------------------------------------------------------
 ## Notes 
