@@ -14,7 +14,7 @@ const Chromaticities AP0 = // ACES Primaries from SMPTE ST2065-1
         {0.00010, -0.07700},
         {0.32168, 0.33767}};
 
-const Chromaticities APPLE_WG_PRI =
+const Chromaticities APPLE_WIDE_GAMUT_PRI =
     {
         {0.725,  0.301},
         {0.221,  0.814},
@@ -22,7 +22,7 @@ const Chromaticities APPLE_WG_PRI =
         {0.3127, 0.329}};
 
 // Apple Wide Gamut -to- ACES conversion matrix
-const float APPLE_WG_to_ACES_MAT[3][3] = calculate_rgb_to_rgb_matrix(APPLE_WG_PRI,
+const float APPLE_WG_to_ACES_MAT[3][3] = calculate_rgb_to_rgb_matrix(APPLE_WIDE_GAMUT_PRI,
                                                                      AP0);
 
 float AppleLog_to_linear(float x)
