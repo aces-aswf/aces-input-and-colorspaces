@@ -1,8 +1,16 @@
+
 // SPDX-License-Identifier: Apache-2.0
 // Copyright Contributors to the ACES Project.
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:CSC.Apple.ACES_to_AppleLog_BT2020.a2.v1</ACEStransformID>
-// <ACESuserName>ACES2065-1 to AppleLog Rec2020</ACESuserName>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:CSC.Apple.ACES_to_AppleLog2.a2.v1</ACEStransformID>
+// <ACESuserName>ACES2065-1 to Apple Log 2</ACESuserName>
+
+//
+// ACES Color Space Conversion - ACES2065-1 to Apple Log 2
+//
+// converts ACES2065-1 (AP0 w/ linear encoding) to
+//          Apple Log 2
+//
 
 import "Lib.Academy.Utilities";
 import "Lib.Academy.ColorSpaces";
@@ -14,16 +22,16 @@ const Chromaticities AP0 = // ACES Primaries from SMPTE ST2065-1
         {0.00010, -0.07700},
         {0.32168, 0.33767}};
 
-const Chromaticities REC2020_PRI =
+const Chromaticities APPLE_WIDE_GAMUT_PRI =
     {
-        {0.70800, 0.29200},
-        {0.17000, 0.79700},
-        {0.13100, 0.04600},
-        {0.31270, 0.32900}};
+        {0.725,  0.301},
+        {0.221,  0.814},
+        {0.068, -0.076},
+        {0.3127, 0.329}};
 
-// ITU-R BT.2020 -to- ACES conversion matrix
-const float ACES_to_REC2020_MAT[3][3] = calculate_rgb_to_rgb_matrix(AP0,
-                                                                    REC2020_PRI);
+// Apple Wide Gamut -to- ACES conversion matrix
+const float ACES_to_APPLE_WG_MAT[3][3] = calculate_rgb_to_rgb_matrix(AP0,
+                                                                     APPLE_WIDE_GAMUT_PRI);
 
 float linear_to_AppleLog(float R)
 {
@@ -59,15 +67,15 @@ void main(input varying float rIn,
 {
     float aces[3] = {rIn, gIn, bIn};
 
-    float lin_2020[3] = mult_f3_f33(aces, ACES_to_REC2020_MAT);
+    float lin_Apple_WG[3] = mult_f3_f33(aces, ACES_to_APPLE_WG_MAT);
 
-    float AppleLog[3];
-    AppleLog[0] = linear_to_AppleLog(lin_2020[0]);
-    AppleLog[1] = linear_to_AppleLog(lin_2020[1]);
-    AppleLog[2] = linear_to_AppleLog(lin_2020[2]);
+    float AppleLog2[3];
+    AppleLog2[0] = linear_to_AppleLog(lin_Apple_WG[0]);
+    AppleLog2[1] = linear_to_AppleLog(lin_Apple_WG[1]);
+    AppleLog2[2] = linear_to_AppleLog(lin_Apple_WG[2]);
 
-    rOut = AppleLog[0];
-    gOut = AppleLog[1];
-    bOut = AppleLog[2];
+    rOut = AppleLog2[0];
+    gOut = AppleLog2[1];
+    bOut = AppleLog2[2];
     aOut = aIn;
 }
