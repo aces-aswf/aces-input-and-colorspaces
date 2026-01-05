@@ -5,6 +5,13 @@
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:CSC.Apple.ACES_to_AppleLog_AppleWG.a2.v1</ACEStransformID>
 // <ACESuserName>ACES2065-1 to Apple Log 2</ACESuserName>
 
+//
+// ACES Color Space Conversion - ACES2065-1 to Apple Log 2
+//
+// converts ACES2065-1 (AP0 w/ linear encoding) to
+//          Apple Log 2
+//
+
 import "Lib.Academy.Utilities";
 import "Lib.Academy.ColorSpaces";
 
