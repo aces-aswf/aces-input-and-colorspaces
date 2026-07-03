@@ -36,7 +36,7 @@ See [CONTRIBUTING](https://github.com/aces-aswf/.github/blob/main/CONTRIBUTING.m
 
 ## Governance
 
-This repository is a submodule of the ACES project, which is itslef governed by the
+This repository is a submodule of the ACES project, which is itself governed by the
 Academy Software Foundation.
 
 For details about how the ACES project operates, please see
@@ -47,7 +47,7 @@ For details about how the ACES project operates, please see
 To report a problem with Color Space Conversion Transforms, please open an
 [issue](https://github.com/aces-aswf/aces-input-and-colorspaces/issues).
 
-If the issue is senstive in nature or a security related issue, please do not
+If the issue is sensitive in nature or a security related issue, please do not
 report in the issue tracker. Instead refer to [SECURITY](https://github.com/aces-aswf/.github/blob/main/SECURITY.md)
 for more information about the project security policy.
 
