@@ -21,14 +21,14 @@ const Chromaticities AP0 = // ACES Primaries from SMPTE ST2065-1
         {0.00010, -0.07700},
         {0.32168, 0.33767}};
 
-const Chromaticities vivo_WIDE_GAMUT_PRI =
+const Chromaticities VIVO_WIDE_GAMUT_PRI =
     {
         {0.7063, 0.2957},
         {0.1913, 0.9623},
         {0.1115, -0.0492},
         {0.3127, 0.3290}};
 
-const float vivoWG_to_AP0_MAT[3][3] = calculate_rgb_to_rgb_matrix(vivo_WIDE_GAMUT_PRI,
+const float VIVO_WG_to_AP0_MAT[3][3] = calculate_rgb_to_rgb_matrix(VIVO_WIDE_GAMUT_PRI,
                                                                 AP0,
                                                                 CONE_RESP_MAT_CAT02);
 
@@ -59,7 +59,7 @@ void main(input varying float rIn,
     lin_vivoWG[1] = normalizedLogC4ToRelativeSceneLinear(gIn);
     lin_vivoWG[2] = normalizedLogC4ToRelativeSceneLinear(bIn);
 
-    float ACES[3] = mult_f3_f33(lin_vivoWG, vivoWG_to_AP0_MAT);
+    float ACES[3] = mult_f3_f33(lin_vivoWG, VIVO_WG_to_AP0_MAT);
 
     rOut = ACES[0];
     gOut = ACES[1];
