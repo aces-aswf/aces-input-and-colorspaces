@@ -32,17 +32,12 @@ const float VIVO_WG_to_AP0_MAT[3][3] = calculate_rgb_to_rgb_matrix(VIVO_WIDE_GAM
                                                                 AP0,
                                                                 CONE_RESP_MAT_CAT02);
 
-// LogC4 Curve Decoding Function
-float normalizedLogC4ToRelativeSceneLinear(float x)
-{
-
-    if (x > 0.128231 ){
+float vivoLog_to_linear(float x) {
+    if (x > 0.128231 ) {
 		return (pow(10, (x - 0.382516) / 0.265817) - 0.076581) / 5.558556;
-	}
-	else{
+	} else {
 		return (x - 0.092813) / 5.775961;
 	}
-
 }
 
 void main(input varying float rIn,
@@ -55,9 +50,9 @@ void main(input varying float rIn,
           output varying float aOut)
 {
     float lin_vivoWG[3];
-    lin_vivoWG[0] = normalizedLogC4ToRelativeSceneLinear(rIn);
-    lin_vivoWG[1] = normalizedLogC4ToRelativeSceneLinear(gIn);
-    lin_vivoWG[2] = normalizedLogC4ToRelativeSceneLinear(bIn);
+    lin_vivoWG[0] = vivoLog_to_linear(rIn);
+    lin_vivoWG[1] = vivoLog_to_linear(gIn);
+    lin_vivoWG[2] = vivoLog_to_linear(bIn);
 
     float ACES[3] = mult_f3_f33(lin_vivoWG, VIVO_WG_to_AP0_MAT);
 
