@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright Contributors to the ACES Project.
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:CSC.vivo.vivoLog_to_ACES.a2.v1</ACEStransformID>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:CSC.vivo.vivoLog_vivoWG_to_ACES.a2.v1</ACEStransformID>
 // <ACESuserName>vivo Log to ACES2065-1</ACESuserName>
 
 //
 // ACES Color Space Conversion - vivo Log to ACES2065-1
 //
-// converts vivo Log to
+// converts vivo Log / vivo Wide Gamut to
 //          ACES2065-1 (AP0 w/ linear encoding)
 //
 
@@ -29,8 +29,8 @@ const Chromaticities VIVO_WIDE_GAMUT_PRI =
         {0.3127, 0.3290}};
 
 const float VIVO_WG_to_AP0_MAT[3][3] = calculate_rgb_to_rgb_matrix(VIVO_WIDE_GAMUT_PRI,
-                                                                AP0,
-                                                                CONE_RESP_MAT_CAT02);
+                                                                   AP0,
+                                                                   CONE_RESP_MAT_CAT02);
 
 float vivoLog_to_linear(float x) {
     if (x > 0.128231 ) {
