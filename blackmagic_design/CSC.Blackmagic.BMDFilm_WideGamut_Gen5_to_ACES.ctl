@@ -2,7 +2,7 @@
 // Copyright Contributors to the ACES Project.
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:CSC.Blackmagic.BMDFilm_WideGamut_Gen5_to_ACES.a2.v1</ACEStransformID>
-// <ACESuserName>Blackmagic Film Wide Gamut (Gen 5) to ACES2605-1</ACESuserName>
+// <ACESuserName>Blackmagic Film Wide Gamut (Gen 5) to ACES2065-1</ACESuserName>
 
 //
 // ACES Color Space Conversion - Blackmagic Film Wide Gamut (Gen 5) to ACES2065-1

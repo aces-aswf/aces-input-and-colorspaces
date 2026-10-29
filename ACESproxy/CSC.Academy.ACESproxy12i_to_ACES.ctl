@@ -2,7 +2,7 @@
 // Copyright Contributors to the ACES Project.
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:CSC.Academy.ACESproxy12i_to_ACES.a2.v1</ACEStransformID>
-// <ACESuserName>ACESproxy to ACES2065-1</ACESuserName>
+// <ACESuserName>ACESproxy 12i to ACES2065-1</ACESuserName>
 
 //
 // ACES Color Space Conversion - ACESproxy (12-bit) to ACES
